@@ -1,0 +1,45 @@
+<div class="container">
+    @if(films$ | async; as films) {
+      @for(film of films; track film.id;) {
+        <div class="card">
+          <div class="actions">
+            <span id="like" (click)="toggleFavorite(film)" [style.opacity]="(film.isFavorite ?? false) ? '1' : '0.2'">
+              ❤️
+            </span>
+  
+            <span id="watchList" (click)="toggleWatchlist(film)">
+              {{ (film.inWatchlist ?? false) ? '✔️' : '➕' }}
+            </span>
+          </div>
+  
+          <div class="film-infos">
+            <!-- Title -->
+            <div class="title">
+              <span>{{ film.title }}</span>
+            </div>
+  
+            <!-- Image -->
+            <img [src]="'https://image.tmdb.org/t/p/w500' + film.images.posters[0]?.file_path"
+                 alt="{{ film.title }}">
+  
+            <!-- Overview -->
+            <div class="overview">
+              <p>{{ isExpanded[film.id] ? film.overview : getTruncatedOverview(film.overview) }}</p>
+              
+              @if (film.overview.split(' ').length > 30) {
+                <button (click)="onToggle(film.id)">
+                  {{ isExpanded[film.id] ? 'Show less' : 'Read more' }}
+                </button>
+              }
+            </div>
+  
+            <!-- Vote -->
+            <div class="vote">
+              <p>{{ film.vote_average }}</p>
+            </div>
+          </div>
+  
+        </div>
+      }
+    }
+</div>

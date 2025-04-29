@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --main-bg-color: rgb(31, 30, 30);
+    --card-bg-color: rgb(50, 50, 50);
+    --card-shadow-color: rgb(202, 202, 202);
+    --main-text-color: rgb(234, 233, 233);
+}
+
+html {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    height: 100%;
+    font-family: system-ui;
+}

@@ -1,0 +1,82 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+.card {
+    border: 0.3px solid white;
+    background-color: var(--card-bg-color);
+    box-shadow: 3px 3px 15px var(--card-shadow-color);
+    border-radius: 8px;
+    width: 300px;
+    height: auto;
+    color: var(--main-text-color);
+
+    .actions {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+
+        #like {
+            cursor: pointer; 
+            font-size: 1.5rem;
+        }
+    
+        #watchList {
+            cursor: pointer; 
+            font-size: 1.5rem;
+        }
+    }
+    
+    .film-infos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+
+        .title {
+            font-size: xx-large;
+            margin-bottom: 20px;
+        }
+    
+        img {
+            width: auto;
+            height: 200px;
+        }
+    
+        .overview {
+            font-style: italic;
+    
+            button {
+                background-color: transparent;
+                border: none;
+                color: gray;
+                font-weight: 700;
+                cursor: pointer;
+            }
+        }
+    
+        .vote {
+            margin-top: 5px;
+        }
+    }  
+}
+
+@media (max-width: 1024px) {
+    .card {
+      width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+      width: 100%;
+    }
+  
+    .container {
+      justify-content: center;
+    }
+}

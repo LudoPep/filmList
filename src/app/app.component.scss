@@ -1,0 +1,45 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+
+.layout {
+    display: flex;
+}
+  
+.sidebar {
+    background: rgb(50, 50, 50);
+    color: var(--main-text-color);
+    padding: 2rem;
+}
+  
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.sidebar li {
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+  
+.sidebar li:hover {
+    color: #ffd700;
+}
+  
+.sidebar li.active {
+    font-weight: bold;
+    color: #ffd700;
+}
+  
+.content {
+    flex: 1;
+    padding: 2rem;
+    background: #121212;
+    color: var(--main-text-color);
+}
